@@ -1,11 +1,14 @@
 import './App.css';
-import WelcomeAge from './components/WelcomeAge';
+// import WelcomeAge from './components/exo_01/WelcomeAge';
+import ProductList from './components/exo_02/ProductList';
+import products from './data/products.json'
 
 function App() {
   return (
     <div className="App">
-      <WelcomeAge name="Riri"/>
-      <WelcomeAge name="Fifi" age="10" />
+      {/* EXO_01*/}
+      {/* <WelcomeAge name="Riri"/> */}
+      <ProductList products={products}/>
     </div>
   );
 }

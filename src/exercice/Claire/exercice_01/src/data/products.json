@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "name": "Chocolate bar",
+      "price": 3,
+      "promo": true
+    },
+    {
+      "id": 2,
+      "name": "Apple",
+      "price": 5,
+      "promo": false
+    },
+    {
+      "id": 3,
+      "name": "TV",
+      "price": 20,
+      "promo": false
+    },
+    {
+      "id": 4,
+      "name": "Shoes",
+      "price": 10,
+      "promo": true
+    }
+  ]
+  
