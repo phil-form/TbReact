@@ -3,24 +3,23 @@
         "id": "1",
         "name": "apple",
         "price": "1",
-        "promo": true
+        "promoPrice": "0.5"
     },
     {
         "id": "2",
         "name": "banana",
-        "price": "3",
-        "promo": false
+        "price": "3"
     },
     {
         "id": "3",
         "name": "orange",
         "price": "1",
-        "promo": true
+        "promoPrice": "0.5"
     },
     {
         "id": "4",
         "name": "tomato",
         "price": "3",
-        "promo": false
+        "promoPrice": "2"
     }
 ]
