@@ -17,7 +17,6 @@ WelcomeAge.propTypes = {
 };
 
 WelcomeAge.defaultProps = {
-    name: 'Unknown user',
     age: 18
 }
 
