@@ -21,12 +21,19 @@ const ProductTable = ({products}) => {
     );
 };
 
-const ProductTableRow = ({id, name, price, promo}) => {
+const ProductTableRow = ({id, name, price, promoPrice}) => {
     return (
         <tr>
             <td> {id} </td>
             <td> {name}: </td>
-            <td> <span className= {promo ? style.promo : ""}>{price}$</span> </td>
+            <td>
+                {promoPrice ?
+                <div>
+                    <span className={style.barred}>{price} </span> 
+                    <span className={style.promo}>{promoPrice}$</span>
+                </div> :
+                <span>{price}$</span>}
+            </td>
         </tr>
     );
 };
