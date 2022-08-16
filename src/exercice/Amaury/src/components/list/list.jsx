@@ -4,16 +4,26 @@ const List = ({products}) => {
 
     const listItems = products.map(
         product => 
-            <li key={product.id}>
-                {product.name}: <span style={product.discount ? {color: 'red'} : {color: 'black'}}>{product.price}</span> euros {product.discount ? 'on discount!' : ''}
-            </li>
+            <tr key={product.id}>
+                <td>{product.name}</td>
+                <td style={product.discount ? {color: 'red'} : {color: 'black'}}>{product.price} euros</td>
+                <td>{product.discount ? 'on discount!' : ''}</td>
+            </tr>
     );
 
     return (
         <>
-            <ul>
-                {listItems}
-            </ul>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {listItems}
+                </tbody>
+            </table>
         </>
     );
 };
