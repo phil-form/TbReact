@@ -6,7 +6,7 @@ const ProductTable = ({products}) => {
     );
 
     return (
-        <table>
+        <table class="table">
             <thead>
                 <tr>
                     <td>Id</td>
