@@ -1,3 +1,4 @@
+import Table from 'react-bootstrap/Table';
 
 
 const List = ({products}) => {
@@ -13,7 +14,7 @@ const List = ({products}) => {
 
     return (
         <>
-            <table>
+            <Table striped bordered hover>
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -23,7 +24,7 @@ const List = ({products}) => {
                 <tbody>
                     {listItems}
                 </tbody>
-            </table>
+            </Table>
         </>
     );
 };
