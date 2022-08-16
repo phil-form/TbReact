@@ -10,7 +10,7 @@ const Welcome = (props) => {
             <p className={style.age}>Vous avez {props.age} ans!</p>
         </>
     );
-}
+};
 
 Welcome.propTypes = {
     name: PropTypes.string.isRequired,
