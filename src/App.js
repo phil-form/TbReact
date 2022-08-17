@@ -15,6 +15,7 @@ import BasicForm from "./demo/demo-06-forms/components/basic-form/basic-form";
 import ComplexForm from "./demo/demo-06-forms/components/complex-form/complex-form";
 import ComplexFormV2 from "./demo/demo-06-forms/components/complex-form/complex-form-v2";
 import Calculator from "./exercice/exercice-04/components/calculator/calculator";
+import ChildEvents from "./demo/demo-07-child-events/components/child-events";
 
 function App() {
   return (
@@ -52,7 +53,12 @@ function App() {
         {/*<ComplexFormV2 />*/}
 
         {/*exercice 04 forms*/}
-        <Calculator />
+        {/*<Calculator />*/}
+
+        <ChildEvents onResponse={(val) => console.log(val)}
+                     onMachin={(val) => console.log(val)}
+                     onTriggeredEvent={(val) => console.log(val)}
+                     onClick={(val) => console.log(val)}/>
     </div>
   );
 }
