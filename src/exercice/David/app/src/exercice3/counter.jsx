@@ -15,7 +15,7 @@ const Counter = (props) => {
         <div className="counter-elem">
             <p>{get}</p>
             <button onClick={increment}>Add {props.increment}</button>
-            {get > 0 ? <button onClick={reset}>Reset</button> : ""}
+            {get > 0 && (<button onClick={reset}>Reset</button>)}
         </div>
     );
 }
