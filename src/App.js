@@ -14,6 +14,7 @@ import Counter from "./exercice/exercice-03/counter";
 import BasicForm from "./demo/demo-06-forms/components/basic-form/basic-form";
 import ComplexForm from "./demo/demo-06-forms/components/complex-form/complex-form";
 import ComplexFormV2 from "./demo/demo-06-forms/components/complex-form/complex-form-v2";
+import Calculator from "./exercice/exercice-04/components/calculator/calculator";
 
 function App() {
   return (
@@ -48,7 +49,10 @@ function App() {
          {/* demo 6 forms */}
         {/*<BasicForm />*/}
         {/*<ComplexForm />*/}
-        <ComplexFormV2 />
+        {/*<ComplexFormV2 />*/}
+
+        {/*exercice 04 forms*/}
+        <Calculator />
     </div>
   );
 }
