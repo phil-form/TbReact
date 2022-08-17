@@ -14,6 +14,7 @@ const Calculator = () =>
 
     const [result, setResult] = useState('');
 
+    // permet de créer une référence vers un élément html.
     // utiliser une ref pour changer le focus sur un champ du form.
     const refInput = useRef();
 
