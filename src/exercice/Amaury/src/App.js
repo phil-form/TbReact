@@ -5,6 +5,7 @@ import Welcome from './components/welcome/welcome';
 import List from './components/list/list';
 import Counter from './components/counter/counter';
 import Calculator from './components/calculator/calculator';
+import TaskList from './components/task/taskList';
 
 
 const products = [
@@ -20,6 +21,7 @@ function App() {
       <List products={products}/>
       <Counter incrementValue={5}/>
       <Calculator />
+      <TaskList />
     </div>
   );
 };
