@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const TodoForm = (props)  => {
-    const [task, setTask] = useState({name: "", description: "", priority: "Low"});
+    const [task, setTask] = useState({name: "", description: "", priority: "Low", done: false});
 
     const changeHandle = (event) => {
         const { name, value} = event.target;
@@ -14,7 +14,6 @@ const TodoForm = (props)  => {
 
     const submitHandle = (event) => {
         event.preventDefault();
-        console.log();
         props.onMyEvent(task);
     };
 

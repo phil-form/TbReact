@@ -9,10 +9,16 @@ const Todo = (props) => {
         setTasks([...tasks, task]);
     };
 
+    const updateTask = (task) => {
+        let cpy = [...tasks];
+        cpy[task.id] = task;
+        setTasks(cpy);
+    };
+
     return (
         <div className="container">
             <TodoForm onMyEvent={addTask}/>
-            <TodoList tasks={tasks}/>
+            <TodoList tasks={tasks} onEvent={updateTask}/>
         </div>
     );
 };
