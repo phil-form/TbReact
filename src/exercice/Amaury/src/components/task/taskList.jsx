@@ -7,21 +7,11 @@ import Task from './task';
 
 const TaskList = () => {
     const [tasks, setTasks] = useState([]);
-    const [filteredTasks, setFilteredTasks] = useState([]);
+    const [filter, setFilter] = useState('');
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
     const [priority, setPriority] = useState('normal');
     const [validated, setValidated] = useState(false);
-
-    const handleTaskClose = (key) => {
-        setValidated(false);
-
-        let t = [...tasks];
-        t[key].closed = true;
-
-        setTasks(t);
-        setFilteredTasks(t);
-    };
 
     const handleTaskDelete = (key) => {
 
@@ -29,7 +19,6 @@ const TaskList = () => {
         t.splice(key, 1);
 
         setTasks(t);
-        setFilteredTasks(t);
     };
 
     const handleSubmit = (e) => {
@@ -52,32 +41,24 @@ const TaskList = () => {
         t.push(newTask);
 
         setTasks(t);
-        setFilteredTasks(t);
     };
 
-    const filterTasks = (filter) => {
-        let t = [];
+    const filterTasks = (task, filter) => {
         if (filter == 'priority') {
-            tasks.forEach(task => {
-                if (task.priority == 'high' && !task.closed) {
-                    t.push(task);
-                };
-            });     
+            if (task.priority == 'high' && !task.closed) {
+                return true;
+            };   
         } else if (filter == 'progress') {
-            tasks.forEach(task => {
-                if (!task.closed) {
-                    t.push(task);
-                };
-            });
+            if (!task.closed) {
+                return true;
+            };
+        } else if (filter == 'closed') {
+            if (task.closed) {
+                return true;
+            };
         } else {
-            tasks.forEach(task => {
-                if (task.closed) {
-                    t.push(task);
-                };
-            });
+            return true;
         };
-
-        setFilteredTasks(t);
     };
 
     return (
@@ -116,13 +97,13 @@ const TaskList = () => {
             </Form>
             <h1>Tasks</h1>
             <ButtonGroup className='mb-5'>
-                <Button onClick={() => {filterTasks('priority')}} variant='link'>High priority</Button>
-                <Button onClick={() => {filterTasks('progress')}} variant='link'>In progress</Button>
-                <Button onClick={() => {filterTasks('closed')}} variant='link'>Closed</Button>
+                <Button onClick={() => {setFilter('priority')}} variant='link'>High priority</Button>
+                <Button onClick={() => {setFilter('progress')}} variant='link'>In progress</Button>
+                <Button onClick={() => {setFilter('closed')}} variant='link'>Closed</Button>
             </ButtonGroup>
-            {filteredTasks.map(
+            {tasks.map(
                 (task, key) => (
-                    <Task key={key} handleTaskDelete={handleTaskDelete} handleTaskClose={handleTaskClose} id={key} task={task} />
+                    filterTasks(task, filter) && (<Task key={key} handleTaskDelete={handleTaskDelete} id={key} task={task} />)         
                 )
             )}
         </div>
