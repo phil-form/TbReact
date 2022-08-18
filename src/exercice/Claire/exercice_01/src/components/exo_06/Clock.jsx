@@ -11,11 +11,11 @@ function Clock() {
 
     useEffect(() => {
         console.log("Setting interval to update the time.");
-        const intervalId = setTimeout(tick, 200);
+        const id = setTimeout(tick, 200);
 
         return () => {
             console.log("Unregister from component.");
-            clearInterval(intervalId);
+            clearTimeout(id);
         }
     }, [time]);
 

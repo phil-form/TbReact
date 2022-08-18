@@ -7,7 +7,7 @@ function Calendar() {
 
     return (
         <>
-            <p>Date: {today.toLocaleDateString("fr-FR", {day: '2-digit', month: '2-digit', year:'numeric'})}</p>
+            <p>Date: {today.toLocaleDateString("fr-FR", {day: '2-digit', month: 'short', year:'numeric'})}</p>
         </>
     );
 }
