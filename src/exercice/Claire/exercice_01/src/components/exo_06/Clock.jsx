@@ -11,17 +11,17 @@ function Clock() {
 
     useEffect(() => {
         console.log("Setting interval to update the time.");
-        const intervalId = setInterval(tick, 200);
+        const intervalId = setTimeout(tick, 200);
 
         return () => {
             console.log("Unregister from component.");
             clearInterval(intervalId);
         }
-    }, []);
+    }, [time]);
 
     return (
         <>
-            <p>Time: {time.toLocaleTimeString()}</p>
+            <p>Time: {time.toLocaleTimeString("fr-FR", {hour: '2-digit', minute: '2-digit', second: '2-digit'})}</p>
         </>
     );
 }
