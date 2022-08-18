@@ -17,10 +17,10 @@ const products = [
 function App() {
   return (
     <div className="App">
-      <Welcome name='Amaury' age={18}/>
-      <List products={products}/>
-      <Counter incrementValue={5}/>
-      <Calculator />
+      {/*<Welcome name='Amaury' age={18}/>*/}
+      {/*<List products={products}/>*/}
+      {/*<Counter incrementValue={5}/>*/}
+      {/*<Calculator />*/}
       <TaskList />
     </div>
   );

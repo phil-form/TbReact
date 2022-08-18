@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Form from 'react-bootstrap/Form';
 import Task from './task';
 
 
 const TaskList = () => {
     const [tasks, setTasks] = useState([]);
+    const [filteredTasks, setFilteredTasks] = useState([]);
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
     const [priority, setPriority] = useState('normal');
@@ -18,6 +20,7 @@ const TaskList = () => {
         t[key].closed = true;
 
         setTasks(t);
+        setFilteredTasks(t);
     };
 
     const handleTaskDelete = (key) => {
@@ -26,12 +29,17 @@ const TaskList = () => {
         t.splice(key, 1);
 
         setTasks(t);
+        setFilteredTasks(t);
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         setValidated(true);
+
+        if (e.target.checkValidity() == false) {
+            return;
+        };
 
         let newTask = {
             name: name,
@@ -43,14 +51,38 @@ const TaskList = () => {
         let t = [...tasks];
         t.push(newTask);
 
-        console.log(newTask)
-        console.log(t)
-
         setTasks(t);
+        setFilteredTasks(t);
+    };
+
+    const filterTasks = (filter) => {
+        let t = [];
+        if (filter == 'priority') {
+            tasks.forEach(task => {
+                if (task.priority == 'high' && !task.closed) {
+                    t.push(task);
+                };
+            });     
+        } else if (filter == 'progress') {
+            tasks.forEach(task => {
+                if (!task.closed) {
+                    t.push(task);
+                };
+            });
+        } else {
+            tasks.forEach(task => {
+                if (task.closed) {
+                    t.push(task);
+                };
+            });
+        };
+
+        setFilteredTasks(t);
     };
 
     return (
         <div className='container'>
+            <h1>Add a new task</h1>
             <Form noValidate validated={validated} onSubmit={handleSubmit}>
                 <Form.Group className='mb-3 mt-5'>
                     <Form.Label>Name</Form.Label>
@@ -60,7 +92,7 @@ const TaskList = () => {
                         onChange={(e) => {setName(e.target.value)}}
                         required
                     />
-                    <Form.Control.Feedback type='invalid'>Please enter a name for the taskr</Form.Control.Feedback> 
+                    <Form.Control.Feedback type='invalid'>Please enter a name for the task</Form.Control.Feedback> 
                 </Form.Group> 
                 
                 <Form.Group className='mb-3'>
@@ -80,10 +112,15 @@ const TaskList = () => {
                         <option value='low'>low</option>
                     </Form.Select>
                 </Form.Group>
-                <Button variant='success' type='submit' className='mb-3'>Add task</Button>
+                <Button variant='primary' type='submit' className='mb-3'>Add task</Button>
             </Form>
             <h1>Tasks</h1>
-            {tasks.map(
+            <ButtonGroup className='mb-5'>
+                <Button onClick={() => {filterTasks('priority')}} variant='link'>High priority</Button>
+                <Button onClick={() => {filterTasks('progress')}} variant='link'>In progress</Button>
+                <Button onClick={() => {filterTasks('closed')}} variant='link'>Closed</Button>
+            </ButtonGroup>
+            {filteredTasks.map(
                 (task, key) => (
                     <Task key={key} handleTaskDelete={handleTaskDelete} handleTaskClose={handleTaskClose} id={key} task={task} />
                 )
