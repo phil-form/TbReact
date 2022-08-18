@@ -5,6 +5,7 @@ import TaskForm from './TaskForm';
 
 function TodoList(props) {
     const [todos, setTodos] = useState(props.todos) 
+    const [filter, setFilter] = useState({value: 'all', list: props.todos})
     
     function newTask(todo) {
         setTodos( (v) => {
@@ -14,10 +15,34 @@ function TodoList(props) {
     }
 
     function removeTask(todo) {
-        const index = todos.indexOf(todo)
         setTodos( (v) => {
-            v.splice(index, 1)
+            for(let index of v) {
+                if(v[index].id === todo.id) {
+                    v.splice(index, 1)
+                    break;
+                }
+            }
             return [...v]
+        })
+    }
+
+    function filterHandle(e) {
+        setFilter( (v) => {
+            v.value = e.target.value
+            switch (v.value) {
+                case 'urgent':
+                    v.list = todos.filter( todo => todo.priority === 1)
+                    break;
+                case 'done':
+                    v.list = todos.filter( todo => todo.done)
+                    break;
+                case 'on':
+                    v.list = todos.filter( todo => !todo.done)
+                    break;
+                default:
+                    v.list = todos;
+            }
+            return {...v}
         })
     }
 
@@ -29,15 +54,23 @@ function TodoList(props) {
 
     return (
         <>
-        <h1>Todo's</h1>
-        <TaskForm onNew={newTask}/>
-        <table className='table'>
-            <tbody>
-                {
-                    todos.map( (todo) => <Task key={`${todo.id}`} todo={todo} onRemove={removeTask}/> )
-                }
-            </tbody>
-        </table>
+            <h1>New task</h1>
+            <TaskForm onNew={newTask}/>
+            <hr></hr>
+            <h1>Todo's</h1>
+            <select value={filter.value} onChange={filterHandle}>
+                <option value="all">All</option>
+                <option value="urgent">Urgent</option>
+                <option value="on">Ongoing</option>
+                <option value="done">Finished</option>
+            </select>
+            <table className='table'>
+                <tbody>
+                    {
+                        filter.list.map( (todo) => <Task key={`${todo.id}`} todo={todo} onRemove={removeTask}/> )
+                    }
+                </tbody>
+            </table>
         </>
     )
 }

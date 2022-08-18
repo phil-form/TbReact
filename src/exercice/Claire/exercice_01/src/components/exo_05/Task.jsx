@@ -20,12 +20,12 @@ function Task(props) {
     return (
         <tr>
             <td>
-                <input type="checkbox" className="form-check-input" id="done" value={todo.done} onChange={check}/>
+                <input type="checkbox" className="form-check-input" id="done" checked={todo.done} onChange={check}/>
             </td>
             <td>
                <div className={`card ${todo.priority === 1 ? "bg-danger" : ""} ${todo.done ? "bg-secondary" : ""}`}>
                 <div className="card-body">
-                    <h5 className="card-title">{todo.name}</h5>
+                    <h5 className="card-title">{todo.done ? <s>{todo.name}</s> : todo.name}</h5>
                     <p className="card-text">{todo.description}</p>
                 </div>
                </div>

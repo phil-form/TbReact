@@ -25,6 +25,6 @@
         "name": "Exercice 05",
         "description": "Do the exercise 05",
         "priority": 1,
-        "done": false
+        "done": true
     }
 ]
