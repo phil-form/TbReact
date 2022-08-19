@@ -9,6 +9,7 @@ import TaskList from './components/task/taskList';
 import ClockApp from './components/clock/clockApp';
 import MainApp from './components/weather/mainApp';
 import WeatherTest from './components/weatherTest/weatherTest';
+import MyApp from './components/MyWeather/MyApp';
 
 
 const products = [
@@ -26,7 +27,7 @@ function App() {
       {/*<Calculator />*/}
       {/*<TaskList />*/}
       {/*<ClockApp />*/}
-      <WeatherTest />
+      <MyApp />
     </div>
   );
 };
