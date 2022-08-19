@@ -5,7 +5,7 @@ import WeatherBlock from "./weather-block";
 import WeatherError from "./weather-error";
 import WeatherLoading from "./weather-loading";
 import style from "./weather.module.css";
-import background from "../static/sun.png";
+
 
 
 const apiKey = "93f4161a1b8b89c136bf93802801d58d";
@@ -48,9 +48,7 @@ const Weather = () => {
                 <div className={style.SearchBar}>
                     <Search onMyEvent={setQuery}/>
                 </div>
-                <div className={style.CurrentCity} style={{backgroundImage: `url(${background})`}}>
                     {error ? <WeatherError error={error}/> : isLoading ? <WeatherLoading/> : <WeatherBlock data={data}/>}
-                </div>
             </div>
         </>
     );
