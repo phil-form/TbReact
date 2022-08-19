@@ -7,8 +7,6 @@ import Counter from './components/counter/counter';
 import Calculator from './components/calculator/calculator';
 import TaskList from './components/task/taskList';
 import ClockApp from './components/clock/clockApp';
-import MainApp from './components/weather/mainApp';
-import WeatherTest from './components/weatherTest/weatherTest';
 import MyApp from './components/MyWeather/MyApp';
 
 

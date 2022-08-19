@@ -11,7 +11,7 @@ const MyApp = () => {
         e.preventDefault();
         
         let apiKey = 'f9e06965e39d48f28cb454ac36c37966';
-        let url = `https://api.weatherbit.io/v2.0/current?city=${search}&key=${apiKey}`;
+        let url = `https://api.weatherbit.io/v2.0/current?city=${search}&key=${apiKey}&include=minutely`;
 
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = () => {
