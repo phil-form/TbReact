@@ -8,10 +8,10 @@ const Clock = (props) => {
     };
 
     useEffect(() =>  {
-        setTimeout(update, 200);
+        const id = setTimeout(update, 200);
 
         return () => {
-            clearTimeout();
+            clearTimeout(id);
         }
     });
 
