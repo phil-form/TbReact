@@ -1,3 +1,6 @@
+#ignore weather icons
+Amaury/public/icons
+
 # Logs
 logs
 *.log
