@@ -6,18 +6,19 @@ import './App.css';
 // import Calc from './components/exo_04/Calc';
 // import TodoList from './components/exo_05/TodoList';
 // import todos from './data/todos.json'
-import Clock from './components/exo_06/Clock';
-import Calendar from './components/exo_06/Calendar';
-import { useState } from 'react';
+// import Clock from './components/exo_06/Clock';
+// import Calendar from './components/exo_06/Calendar';
+// import { useState } from 'react';
+import Container from './components/exo_07/Container';
 
 function App() {
 
-  const [swap, setSwap] = useState(true)
-  let jsx = swap ? <Clock/> : <Calendar/>
+  // const [swap, setSwap] = useState(true)
+  // let jsx = swap ? <Clock/> : <Calendar/>
 
-  function swapClick() {
-    setSwap(!swap)
-  }
+  // function swapClick() {
+  //   setSwap(!swap)
+  // }
 
   return (
     <div className="App container">
@@ -27,8 +28,9 @@ function App() {
       {/* <Counter toIncrement={2}/> */}
       {/* <Calc /> */}
       {/* <TodoList todos={todos}/> */}
-      <input type="button" onClick={swapClick} value="Swap"></input>
-      {jsx}
+      {/* <input type="button" onClick={swapClick} value="Swap"></input>
+      {jsx} */}
+      <Container/>
     </div>
   );
 }
