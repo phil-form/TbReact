@@ -7,6 +7,8 @@ import Counter from './components/counter/counter';
 import Calculator from './components/calculator/calculator';
 import TaskList from './components/task/taskList';
 import ClockApp from './components/clock/clockApp';
+import MainApp from './components/weather/mainApp';
+import WeatherTest from './components/weatherTest/weatherTest';
 
 
 const products = [
@@ -23,7 +25,8 @@ function App() {
       {/*<Counter incrementValue={5}/>*/}
       {/*<Calculator />*/}
       {/*<TaskList />*/}
-      <ClockApp />
+      {/*<ClockApp />*/}
+      <WeatherTest />
     </div>
   );
 };
