@@ -5,6 +5,8 @@ import Welcome from './components/welcome/welcome';
 import List from './components/list/list';
 import Counter from './components/counter/counter';
 import Calculator from './components/calculator/calculator';
+import TaskList from './components/task/taskList';
+import ClockApp from './components/clock/clockApp';
 
 
 const products = [
@@ -16,10 +18,12 @@ const products = [
 function App() {
   return (
     <div className="App">
-      <Welcome name='Amaury' age={18}/>
-      <List products={products}/>
-      <Counter incrementValue={5}/>
-      <Calculator />
+      {/*<Welcome name='Amaury' age={18}/>*/}
+      {/*<List products={products}/>*/}
+      {/*<Counter incrementValue={5}/>*/}
+      {/*<Calculator />*/}
+      {/*<TaskList />*/}
+      <ClockApp />
     </div>
   );
 };
