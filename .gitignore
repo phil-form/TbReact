@@ -1,3 +1,6 @@
+#ignore weather icons
+src/exercice/Amaury/public/icons/
+
 # Logs
 logs
 *.log
