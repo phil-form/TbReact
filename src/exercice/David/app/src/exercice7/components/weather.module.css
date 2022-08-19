@@ -1,0 +1,47 @@
+.MyApp {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 0px;
+    padding: 0px;
+    width: 1000px;
+}
+
+.SearchBar {
+    margin: 0px;
+    padding: 0px;
+    width: 50%;
+    min-height: 50px;
+}
+.SearchBar > form > input {
+    min-height: 50px;
+}
+
+.CurrentCity {
+    border: solid grey 1px;
+    width: 50%;
+    min-height: 80px;
+    background-color: rgb(108, 176, 231);
+    background-repeat: no-repeat;
+    background-position: 200px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.cityName {
+    font-size: xx-large;
+    font-family: Arial, Helvetica, thin;
+    color: white;
+    
+    margin: 10px 10px 15px 10px;
+}
+
+.temperature {
+    margin: 10px 10px 15px 10px;
+    color: white;
+    font-size: xx-large;
+}

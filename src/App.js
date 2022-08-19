@@ -54,7 +54,7 @@ function App() {
         {/*exercice 03 counter*/}
         {/*<Counter incr={1} />*/}
 
-         {/* demo 6 forms */}
+        {/* demo 6 forms */}
         {/*<BasicForm />*/}
         {/*<ComplexForm />*/}
         {/*<ComplexFormV2 />*/}

@@ -6,12 +6,13 @@ import './App.css';
 // import Counter from './exercice3/counter';
 // import Calculator from './exercice4/calculator';
 // import TodoForm from './exercice5/components/todo_form';
-import Controller from './exercice6/components/controller';
+// import Controller from './exercice6/components/controller';
+import Weather from './exercice7/components/weather';
 
 function App() {
   return (
     <div className="App">
-        <Controller/>
+        <Weather/>
     </div>
   );
 }
