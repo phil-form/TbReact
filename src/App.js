@@ -26,6 +26,7 @@ import Agify from "./demo/demo-09-ajax/containers/agify/agify";
 import LoadingDisplay from "./exercice/exercice-07/components/loading-display/loading-display";
 import ErrorDisplay from "./exercice/exercice-07/components/error-display/error-display";
 import WeatherApp from "./exercice/exercice-07/containers/weather-app/weather-app";
+import ExampleApi from "./demo/ExampleAjax/components/example";
 
 function App() {
   return (
@@ -76,7 +77,9 @@ function App() {
         {/*<ToggleDisplay ComponentA={DisplayClock} ComponentB={DisplayDate} />*/}
 
         {/*<Agify />*/}
-        <WeatherApp />
+        {/*<WeatherApp />*/}
+
+        <ExampleApi id={1}/>
     </div>
   );
 }
